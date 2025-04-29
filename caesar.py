@@ -3,7 +3,8 @@ def get_letter(input_letter, shift, cipher):
     """ function that gives a letter after ciphering (if cipher==True) or decipherering
     in caesar cipher with a left shift, takes only capital letters
     """
-    if input_letter > 'Z' or input_letter < 'A': print('Wrong letter')
+    if input_letter > 'Z' or input_letter < 'A':
+        raise ValueError("Not a capital letter")
     if cipher:
         return chr((ord(input_letter)-ord('A')-shift)%26+ord('A'))
     else:
@@ -19,7 +20,7 @@ def caesar(string, shift_len, cipher):
     return result
 
 
-# print(caesar('THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG', 3, True))
+print(caesar('THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG', 3, True))
 # print(caesar('QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD', 3, False))
 # print(get_letter('A', 3, False))
 # print(get_letter('C', 3, True))
