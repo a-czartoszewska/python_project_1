@@ -48,10 +48,11 @@ dictionary = {
     ",": "--..--",
     "?": "..--..",
     " ": "",
+    "\n": "\n"
 }
 rev_dict = {v: k for k, v in dictionary.items()}
 
-def morse(string, cipher):
+def morse_coding(string, cipher):
     """Function to cipher or decipher a message from/into morse code. Put cipher=True to cipher into morse code."""
     if cipher:
         result = ""
@@ -79,7 +80,8 @@ def morse(string, cipher):
         result += rev_dict[temp]
         return (result)
 
-# print(morse("HELLO WORLD",cipher=True))
-# print(morse(".... . .-.. .-.. ---  .-- --- .-. .-.. -..",cipher=False))
-# print(morse("PRZYKŁADOWE ZDANIE",cipher=True))
-# print(morse(".--. .-. --.. -.-- -.- .—..— .- -.. --- .-- .  --.. -.. .- -. .. .",cipher=False))
+if __name__ == "__main__":
+    print(morse_coding("HELLO WORLD",cipher=True))
+    print(morse_coding(".... . .-.. .-.. ---  .-- --- .-. .-.. -..",cipher=False))
+    print(morse_coding("PRZYKŁADOWE ZDANIE",cipher=True))
+    print(morse_coding(".--. .-. --.. -.-- -.- .—..— .- -.. --- .-- .  --.. -.. .- -. .. .",cipher=False))
