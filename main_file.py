@@ -23,8 +23,8 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Description of the program")
-    parser.add_argument("input_file", help="file to be read")
-    parser.add_argument("output_file", help="file to save result")
+    parser.add_argument("input_file", help="File to be read, letters should be capital")
+    parser.add_argument("output_file", help="File to save result")
     parser.add_argument("n_lines", type=int, default=3, nargs='?', help="Number of letters for the Ceasar cipher, default 3")
     parser.add_argument("-option", choices=["e", "d"], required=True, help="Choose an option: encryption or decryption")
     parser.add_argument("-code", choices=["c", "m"], required=True, help="Choose an option: Ceasar cipher or Morse code")
